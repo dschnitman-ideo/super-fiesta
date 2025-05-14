@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Server</title>
+    <style>
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(
+                -45deg,
+                #ff99c8,
+                #a9def9,
+                #d0f4de,
+                #e4c1f9
+            );
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+        .container {
+            text-align: center;
+            padding: 2rem;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(8px);
+        }
+        h1 {
+            color: #1a73e8;
+        }
+        .click-button {
+            background-color: #1a73e8;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.2s;
+            margin-top: 20px;
+        }
+        .click-button:hover {
+            background-color: #1557b0;
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(26, 115, 232, 0.2);
+        }
+        .counter {
+            font-size: 24px;
+            margin-top: 16px;
+            color: #1a73e8;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Your Local Server!</h1>
+        <p>This page is being served from your local machine.</p>
+        <button class="click-button" onclick="incrementCounter()">Click me!</button>
+        <div class="counter">Clicks: <span id="count">0</span></div>
+    </div>
+
+    <script>
+        let count = 0;
+        function incrementCounter() {
+            count++;
+            document.getElementById('count').textContent = count;
+        }
+    </script>
+</body>
+</html> 
